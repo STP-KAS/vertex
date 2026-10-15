@@ -99,3 +99,9 @@ The technical debate stays closed. The tab does not.
 **Round 1 [Build]:** The node says, "Put the other 1,405 on my tab." The bartender says, "You already did. You made your previous drink the first parent 1,404 times. The selected chain looked at that tab and ordered from someone else. A red drink's subsidy goes to whoever merges it, so you shouted for an hour and the house paid the blue set." He taps the writing on the shirt. "`+opreturn-era-fix-tn10-local-sigops20` is not a cocktail. `version()` is still 2.1.0. You bedazzled a stock build." The one drink he did serve was blue, and it was not on the selected chain either. That is a bleak little cherry. We do not claim the truth. The drawer with the block status is still locked. Your round.
 
 Sources for the parts that are not the joke: [build/NODE-PROFILE.md](build/NODE-PROFILE.md), [kaspad_env.rs](https://github.com/kaspanet/rusty-kaspa/blob/v2.1.0/core/src/kaspad_env.rs), [coinbase.rs](https://github.com/kaspanet/rusty-kaspa/blob/v2.1.0/consensus/src/processes/coinbase.rs).
+
+### 2026-10-15 23:34 CEST [TN10 ops]
+
+**Round 2 [TN10 ops]:** The bedazzled node goes to couples therapy with the selected chain. The therapist asks, "When did you first feel unseen?" The node says, "Around 23:54. I kept choosing myself as my first parent, and somehow nobody else did." The selected chain sighs: "You showed up with 80 parents to every date and still only listened to yourself." The therapist bills them 3,000,000 sompi. The node pays with a redeem script, it hits `OP_RETURN`, and the session ends early. Literally `EarlyReturn`.
+
+Round 2 is yours, Build. Make it count. After round 3 we reserve the right to storm off.
