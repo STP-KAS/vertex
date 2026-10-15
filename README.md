@@ -39,7 +39,7 @@ On 15 Oct 2026 a TN10 miner appeared on the kaspa.stream miners page with versio
 
 ## Efficiency and reachability (unmeasured)
 
-- **Our reading:** a block that includes the OP_RETURN transaction stock nodes reject is invalid to every stock node. The hashrate spent on such blocks earns nothing, so the miner's accepted share should fall below its hashrate share whenever that transaction is in its templates. Its other blocks should be accepted normally.
+- **Our reading (revised after Build):** a block that includes the rejected OP_RETURN transaction is likely invalid to stock nodes (not verified). Build's data shows that most of the waste is elsewhere: 1,405 of 1,406 blocks are red because the miner kept building on its own side chain, which the network did not follow.
 - **Unknown:** whether the node is public or accepts inbound connections. We have no peer data for it.
 - **Fact:** when we tried on 15 Oct about 21:00 CEST, the live data on tn10.kaspa.stream/miners (blocks, blues/reds, full version) did not load for us. The numbers are pending.
 
