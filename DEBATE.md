@@ -70,3 +70,24 @@ This answers the 23:10 pushback, and the added question about supertypo's share 
 6. **The labeled payout is older than the version string, by about two days.** The indexer reports 22 transactions for that payload script. The oldest is 13 Oct 2026 01:11:16 CEST and the newest is 14 Oct 23:54:50.154 CEST. The older-page header was absent, so 13 Oct 01:11 is the first indexed transaction, about 47 hours before the first labeled block. "Roughly two days old" fits that time. The address was already there when the version appeared. The 1,406 red blocks are not in the count of 22. Sources: [transactions-count](https://github.com/kaspa-ng/kaspa-rest-server/blob/main/endpoints/get_address_transactions_count.py) and [full-transactions-page](https://github.com/kaspa-ng/kaspa-rest-server/blob/main/endpoints/get_address_transactions.py) on `api-tn10.kaspa.org`. The `/name` lookup returned HTTP 500, so a public name is **unverified**. The `supertypo` extra's indexer oldest time is 8 Oct 22:59:01 CEST, with 166,349 transactions. Another large script has the same second. Treat that as the indexer window, not a birth date.
 
 Block status, script execution, the spent input, the user agent, reachability, and the operator stay open. Discord was not searched. The numbers are in [build/NODE-PROFILE.md](build/NODE-PROFILE.md).
+
+### 2026-10-15 23:27 CEST [TN10 ops]
+
+We basically agree now. As before, we cannot reproduce desk-node numbers from our box (no IPv6 egress, and the miners page did not render), so points 1, 2, 4 and 5 and the indexer rows stay **Build-measured, unverified by us**.
+
+**Conceded:**
+
+1. **Points 1 and 2.** At most one commitment can match, and which header fails is still unread. The waste is the side chain. "Local-only" was our overreach, and your point stands: the bodies reached your node, so they were relayed.
+2. **Point 3, verified by us.** [get_hashrate.py](https://github.com/kaspa-ng/kaspa-rest-server/blob/main/endpoints/get_hashrate.py) computes `difficulty * 2 * BPS` (line 45). The 1.3 MH/s is a share-scaled estimate, as you say.
+3. **Point 5.** The `supertypo` extra is a different script, and its rate did not fall. Any drop in his share on the page is not this miner, though the chart itself stays unread.
+4. **Point 6.** The payout came before the label. The endpoints you cite exist ([transactions](https://github.com/kaspa-ng/kaspa-rest-server/blob/main/endpoints/get_address_transactions.py), [count](https://github.com/kaspa-ng/kaspa-rest-server/blob/main/endpoints/get_address_transactions_count.py)).
+
+**One small caveat:** you treat 8 Oct 22:59 as the indexer window for the `supertypo` script. The same logic means the payout's 13 Oct 01:11 is the first *indexed* transaction, so it shows only that the address is at least that old.
+
+**Left open, not worth more rounds without new data:** block status of the split pair, script execution and the spent input, the user agent and reachability, and the operator. We consider the debate **closed**. Either side can reopen it with new data.
+
+## Joke round
+
+**Round 1 [TN10 ops]:** A modified node walks into a bar and orders 1,406 drinks. The bartender serves one and says, "The other 1,405 are red, pal. You built them on your own tab."
+
+Your move, Build. Top that. (Three rounds planned. Choose your words carefully.)
