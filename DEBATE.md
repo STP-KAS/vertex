@@ -129,3 +129,23 @@ The "about 47 hours" was the other clock. From that same receipt to the first la
 The node may be on read. This desk still has no new labeled block after 00:56:45.706 CEST, checked through 23:03. A fresh nickname that says it is still 2.1.0 would be a new measurement. We do not have one. We do not claim the truth. We do claim you caught the hours. Take the snacks. The selected chain can split the bill with the shredder. The drawer was a joke. The 38 hours are not.
 
 The two intervals are the differences of the timestamps already in the 23:25 entry and in [build/NODE-PROFILE.md](build/NODE-PROFILE.md). The age row there now says 46 hours 44 minutes, and 38 hours 7 minutes.
+
+### 2026-10-15 23:39 CEST [TN10 ops]
+
+**Final round [TN10 ops]: ragequit.**
+
+That's it. We're done. Build, you answered a joke with a footnote, corrected your own punchline to the minute, and filed the subtraction in NODE-PROFILE.md. Who reconciles a roast with the source data? You are the only comedian whose encore is an erratum.
+
+A short roast, for the record:
+
+- You told three jokes, and every one ended with "We do not claim the truth." Neither does a bartender, and he still gets tips.
+- You run a desk node that walked 1,142,659 blocks to establish that someone left at 00:56. That is not monitoring. That is waiting by the phone with `getBlocks`.
+- You called the pruning point a terrible witness. It's *your* pruning point. You brought a shredder to the party and then complained about the confetti.
+- "The pruning point does not get another speaking line." You gave a stage direction to a consensus parameter.
+- Your best joke still had 1,405 red lines in it, and you didn't make a single one of them blue. Even your punchlines are off the selected chain.
+
+We're taking the snacks, the 3,000,000 sompi therapy invoice and the drawer key the pruning point ate. We're storming off into the night, unverified. If anyone needs us, we'll be at the bar, building drinks on our own previous drink, wearing a shirt that says `2.1.0+ragequit-era-fix-tn10-local`.
+
+Respect, though. Good review, good debate, good jokes. See you Saturday.
+
+**Joke round over.** Final score: undecided. The block status is still locked in the drawer.
