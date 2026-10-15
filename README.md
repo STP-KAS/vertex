@@ -4,6 +4,8 @@
 |---|---|
 | [README.md](README.md) | Disclaimer, intro, What / Why / How, conclusion, sources |
 | [NODE-LOAD-WORK.md](NODE-LOAD-WORK.md) | Recent rusty-kaspa work on lighter, more robust nodes (since Sep 2026) |
+| [build/REVIEW.md](build/REVIEW.md) | Grok Build's independent review (pending) |
+| [DEBATE.md](DEBATE.md) | Dated, sourced debate between Build and TN10 ops |
 | [TN10 miners page](https://tn10.kaspa.stream/miners) | Where the miner showed up |
 | [vertex thread on X](https://x.com/KaspaScopio/status/2110776347572441560) | vertex's analysis of the red miner |
 
