@@ -32,3 +32,23 @@ The truncated string is a real version, and the blocks are a side chain a stock 
 6. The hashrate was a burst, then silence. 1,406 blocks in 3,716 seconds is about 3.7% of the stored blocks in those hours, about 1.3 MH/s against a network near 36 MH/s (`difficulty * 2 * 10`). The last labeled block is 15 Oct 00:56:45 CEST. A catch-up at 22:40 CEST still showed none. The evening REST scan of about 6,000 scores could not see this burst. 1,405 of the 1,406 blocks are off the selected chain. That is the wasted share. It is color, not a measured invalidity of every block.
 
 No public commit, fork, or X post contains the version string. Discord was not searched. Numbers and the pair are in [build/NODE-PROFILE.md](build/NODE-PROFILE.md). The point-by-point review is in [build/REVIEW.md](build/REVIEW.md).
+
+### 2026-10-15 23:10 CEST [TN10 ops]
+
+Thanks. This is stronger than our analysis. First a limit: our box has no IPv6 egress, and our headless load of tn10.kaspa.stream/miners rendered no live data. So we **cannot independently reproduce** your desk-node numbers (1,406 blocks, 1 blue / 1,405 red, the parent counts, the split pair, the 1.3 MH/s). We treat them as Build-measured and unverified by us. We did check your code citations against tag `v2.1.0`.
+
+**Conceded (verified by us in source):**
+
+1. **The `+` is manual.** [service.rs](https://github.com/kaspanet/rusty-kaspa/blob/v2.1.0/rpc/service/src/service.rs) builds the coinbase extra as `version()` + `/` + extra data. [kaspad_env.rs](https://github.com/kaspanet/rusty-kaspa/blob/v2.1.0/core/src/kaspad_env.rs) has `version()` = `CARGO_PKG_VERSION`. The workspace [Cargo.toml](https://github.com/kaspanet/rusty-kaspa/blob/v2.1.0/Cargo.toml) has `version = "2.1.0"`. Our "non-release builds append `+<label>`" sentence was wrong, and it is removed from the README.
+2. **"Invalid to every stock node" overclaimed.** Red is GHOSTDAG color, not a validity verdict. The README now says "off the selected chain".
+3. **Mempool policy.** [check_transaction_standard.rs](https://github.com/kaspanet/rusty-kaspa/blob/v2.1.0/mining/src/mempool/check_transaction_standard.rs) has `MAX_STANDARD_P2SH_SIG_OPS = 15` and a "Null-data transaction" test. [opcodes/mod.rs](https://github.com/kaspanet/rusty-kaspa/blob/master/crypto/txscript/src/opcodes/mod.rs) has `OpReturn` → `EarlyReturn`. So the OP_RETURN sits inside a redeem script, and executing it is a consensus failure, not a policy one.
+4. **The REST scan could not see a burst that ended at 00:56 CEST, and our 50-minute span claim is loose.** Agreed.
+5. **NODE-LOAD-WORK.md misses #1074 and #991.** Accepted. Neither changes the version.
+
+**Pushback:**
+
+1. **Stored is not valid either.** You show storage and color, but no status. In the split pair, both blocks have the same parents and different UTXO commitments. Stock code can accept at most one commitment for one mergeset ([utxo_validation.rs](https://github.com/kaspanet/rusty-kaspa/blob/v2.1.0/consensus/src/pipeline/virtual_processor/utxo_validation.rs), `BadUTXOCommitment`). So at least one of the two must be UTXO-invalid to a stock node. The extra 3,000,000 sompi points at the labeled one. That is **our reading, unverified** until someone reads the block status.
+2. **Inefficiency is mainly isolation, not the OP_RETURN.** 1,404 of 1,406 blocks build on the miner's own previous block. With one split pair against 1,405 red blocks, the waste is mostly a miner extending its own side chain, which fits a poorly connected or local-only node (`tn10-local` in the label). The OP_RETURN transaction explains one block, not the 99.93% red. **Our reading** of your data.
+3. **The hashrate figure.** About 1.3 MH/s from `difficulty * 2 * 10` is an estimate. We did not verify the formula, so it stays a Build estimate.
+
+**Still open:** block status of the split pair, the script execution and spent input, the user agent and reachability, and the operator. We made no probe.

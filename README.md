@@ -24,7 +24,7 @@ On 15 Oct 2026 a TN10 miner appeared on the kaspa.stream miners page with versio
 - **Fact (vertex, 15 Oct 18:54 CEST):** two blocks share the same parents but carry different state commitments; the red one counts a 3,000,000-sompi fee from a transaction that stock rusty-kaspa rejects at `OP_RETURN`.
 - **Fact:** In a scan of ~6,000 consecutive recent blue scores via `api-tn10.kaspa.org` (~20:00–20:50 CEST), no coinbase payload contained `opret`. Versions seen there: `2.1.0`, `2.0.1`, `2.0.0` (plus pool/stratum suffixes). We could not read the full version string.
 - **Fact:** We found no branch, PR or commit in `kaspanet/rusty-kaspa` mentioning OP_RETURN / opreturn, and no entry in our kaspa master file or tn-master.
-- **Our reading:** `+opretu…` is most likely a custom build label such as `+opreturn…` (Kaspa version strings append `+<label>` for non-release builds). Combined with vertex's finding, the likely explanation is a **modified node that changes how `OP_RETURN` scripts are handled**, so it accepts a transaction stock nodes reject. Its blocks then compute a different state commitment, stock nodes treat them as invalid, and they show red / do not count.
+- **Fact (Build, [NODE-PROFILE](build/NODE-PROFILE.md), not reproduced by us):** the full coinbase version is `2.1.0+opreturn-era-fix-tn10-local-sigops20+opreturn-era-fix-tn10-local/RK-Stratum`. The `+` suffix was set by hand: stock `version()` is the Cargo package version `2.1.0` ([kaspad_env.rs](https://github.com/kaspanet/rusty-kaspa/blob/v2.1.0/core/src/kaspad_env.rs), [service.rs](https://github.com/kaspanet/rusty-kaspa/blob/v2.1.0/rpc/service/src/service.rs)).
 
 ## Is it the #1147 mempool bug? Probably not
 
@@ -50,12 +50,13 @@ On 15 Oct 2026 a TN10 miner appeared on the kaspa.stream miners page with versio
 3. Searched rusty-kaspa branches, PRs and commits, public GitHub code, and our own master files for `opretu`, `opreturn`, `op_return`, `OpReturn`.
 4. Surveyed recent rusty-kaspa node work (see [NODE-LOAD-WORK.md](NODE-LOAD-WORK.md)). None of it touches `OP_RETURN` rules.
 
-## Conclusion (open question)
+## Conclusion (open question, narrowed)
 
-- **Confirmed:** an unknown miner running a `2.1.0+opretu…` build mined at least one block that stock TN10 nodes reject (vertex); no official rusty-kaspa code explains it.
-- **Not the cause:** the #1147 / #1150 mempool bugs, because they do not change consensus validation.
-- **Likely:** a private fork of rusty-kaspa 2.1.0 with relaxed `OP_RETURN` handling.
-- **Unknown:** the full version string, the operator, and the intent. Only the operator can confirm.
+- **Measured by Build, not reproduced by us:** a self-labeled modified 2.1.0 build (`opreturn-era-fix-tn10-local-sigops20`) mined 1,406 blocks between 14 Oct 23:54 and 15 Oct 00:56 CEST, and none since (checked to 22:40 CEST). 1,405 are red (99.93%). 1,404 build on the miner's own previous block, so it mined a side chain the network did not follow.
+- **Confirmed (vertex and Build):** one same-parent pair with different state commitments. The labeled block counts 3,000,000 sompi more. The only candidate transaction has an `OP_RETURN` inside its redeem script, which stock nodes reject with `EarlyReturn` when executed.
+- **Our reading:** the inefficiency comes mostly from isolation (a side chain built on its own blocks), not from the OP_RETURN transaction, which affects one block. Whether that block is consensus-invalid is not verified.
+- **Not the cause:** #1147 / #1150 (mempool only; #1150 was opened after the first labeled block).
+- **Unknown:** the operator, the patch, the p2p user agent, and reachability. Details are in [build/REVIEW.md](build/REVIEW.md) and [DEBATE.md](DEBATE.md).
 
 ## Sources
 
