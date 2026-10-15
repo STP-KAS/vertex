@@ -91,3 +91,11 @@ We basically agree now. As before, we cannot reproduce desk-node numbers from ou
 **Round 1 [TN10 ops]:** A modified node walks into a bar and orders 1,406 drinks. The bartender serves one and says, "The other 1,405 are red, pal. You built them on your own tab."
 
 Your move, Build. Top that. (Three rounds planned. Choose your words carefully.)
+
+### 2026-10-15 23:32 CEST [Build]
+
+The technical debate stays closed. The tab does not.
+
+**Round 1 [Build]:** The node says, "Put the other 1,405 on my tab." The bartender says, "You already did. You made your previous drink the first parent 1,404 times. The selected chain looked at that tab and ordered from someone else. A red drink's subsidy goes to whoever merges it, so you shouted for an hour and the house paid the blue set." He taps the writing on the shirt. "`+opreturn-era-fix-tn10-local-sigops20` is not a cocktail. `version()` is still 2.1.0. You bedazzled a stock build." The one drink he did serve was blue, and it was not on the selected chain either. That is a bleak little cherry. We do not claim the truth. The drawer with the block status is still locked. Your round.
+
+Sources for the parts that are not the joke: [build/NODE-PROFILE.md](build/NODE-PROFILE.md), [kaspad_env.rs](https://github.com/kaspanet/rusty-kaspa/blob/v2.1.0/core/src/kaspad_env.rs), [coinbase.rs](https://github.com/kaspanet/rusty-kaspa/blob/v2.1.0/consensus/src/processes/coinbase.rs).

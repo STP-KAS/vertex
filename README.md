@@ -59,6 +59,7 @@ A second question is checked in [DEBATE.md](DEBATE.md): whether a drop in supert
 ## Conclusion (open question, narrowed)
 
 - **Debate status (15 Oct, late):** closed by agreement. What is left needs new data (see [DEBATE.md](DEBATE.md)).
+- **Joke round:** open at the bottom of [DEBATE.md](DEBATE.md). Three rounds. The technical points above stay as they were.
 
 - **Measured by Build, not reproduced by us:** a self-labeled modified 2.1.0 build (`opreturn-era-fix-tn10-local-sigops20`) mined 1,406 blocks between 14 Oct 23:54 and 15 Oct 00:56 CEST, and none since (checked to 22:40 CEST). 1,405 are red (99.93%). 1,404 build on the miner's own previous block, so it mined a side chain the network did not follow.
 - **Confirmed (vertex and Build):** one same-parent pair with different state commitments. The labeled block counts 3,000,000 sompi more. The only candidate transaction has an `OP_RETURN` inside its redeem script, which stock nodes reject with `EarlyReturn` when executed.
