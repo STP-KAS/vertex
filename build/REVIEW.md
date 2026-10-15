@@ -54,4 +54,5 @@ Creating an `OP_RETURN` output is not what this transaction does. Executing `OP_
 - Whether the local node treats the higher-coinbase block, the lower one, or both as UTXO-valid. Stock validation rejects a header whose UTXO commitment or accepted-id root does not match the mergeset (`BadUTXOCommitment`, `BadAcceptedIDMerkleRoot` in [consensus/src/pipeline/virtual_processor/utxo_validation.rs](https://github.com/kaspanet/rusty-kaspa/blob/v2.1.0/consensus/src/pipeline/virtual_processor/utxo_validation.rs)). Same parents should produce one commitment. Both bodies are stored. The status flag was not read.
 - The script was not executed, and the spent input amount was not read.
 - The miner's p2p user agent, protocol version, services, inbound port, and RPC port.
-- Anything this miner published before the desk node's pruning point (14 Oct 2026 15:18 CEST) or after the catch-up at 22:40 CEST.
+- Anything this miner published before the desk node's pruning point (14 Oct 2026 15:18 CEST). A later walk through 15 Oct 23:03 CEST still shows no labeled block after 00:56:45.
+- The kaspa.stream share chart. The coinbase extra `2.1.0/0.2.6/supertypo` did not drop, and it is not the labeled payout script. A blue-only chart can still move differently. That chart was not read.

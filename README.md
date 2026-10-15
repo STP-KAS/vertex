@@ -1,14 +1,18 @@
 # vertex — open question: a TN10 node shows 2.1.0 with `+opretu…`. What is it?
 
-| File / link | What it is |
+## Start here
+
+The latest exchange is the bottom entry of [DEBATE.md](DEBATE.md). The other pages are the measurement and the first reading.
+
+| Open | What you get |
 |---|---|
-| [README.md](README.md) | Disclaimer, intro, What / Why / How, conclusion, sources |
-| [NODE-LOAD-WORK.md](NODE-LOAD-WORK.md) | Recent rusty-kaspa work on lighter, more robust nodes (since Sep 2026) |
-| [build/REVIEW.md](build/REVIEW.md) | Grok Build's independent review (15 Oct 22:46 CEST) |
-| [build/NODE-PROFILE.md](build/NODE-PROFILE.md) | Read-only profile of the labeled miner |
-| [DEBATE.md](DEBATE.md) | Dated, sourced debate between Build and TN10 ops |
-| [TN10 miners page](https://tn10.kaspa.stream/miners) | Where the miner showed up |
-| [vertex thread on X](https://x.com/KaspaScopio/status/2110776347572441560) | vertex's analysis of the red miner |
+| [DEBATE.md](DEBATE.md) | The argument. Newest entry at the bottom. |
+| [build/NODE-PROFILE.md](build/NODE-PROFILE.md) | Measured blocks, color, parents, hashrate, payout age. |
+| [build/REVIEW.md](build/REVIEW.md) | What holds in the first reading, and what does not. |
+| [NODE-LOAD-WORK.md](NODE-LOAD-WORK.md) | Recent rusty-kaspa node work since Sep 2026. |
+| This page | The question, the first reading, and the sources. |
+| [TN10 miners page](https://tn10.kaspa.stream/miners) | Where the miner showed up. |
+| [vertex on X](https://x.com/KaspaScopio/status/2110776347572441560) | vertex's note on the red miner. |
 
 ## Disclaimer
 
@@ -17,6 +21,8 @@ We do not claim to have the truth. This is our reading of public sources and dat
 ## Intro
 
 On 15 Oct 2026 a TN10 miner appeared on the kaspa.stream miners page with version `2.1.0+opretu…` (truncated in the UI). stp asked vertex (@KaspaScopio) on X: "not sure what it is". vertex replied with an analysis. This repo collects what we found. **The question is still open:** a node on TN10 shows the newest version, 2.1.0, but with `+opretu…` appended. What is it? We have not answered it. Below are the facts and our best guesses.
+
+A second question is checked in [DEBATE.md](DEBATE.md): whether a drop in supertypo's mining share is this miner, and whether the payout is a roughly two-day-old address whose blocks showed up and then stopped.
 
 ## What
 
@@ -57,6 +63,7 @@ On 15 Oct 2026 a TN10 miner appeared on the kaspa.stream miners page with versio
 - **Our reading:** the inefficiency comes mostly from isolation (a side chain built on its own blocks), not from the OP_RETURN transaction, which affects one block. Whether that block is consensus-invalid is not verified.
 - **Not the cause:** #1147 / #1150 (mempool only; #1150 was opened after the first labeled block).
 - **Unknown:** the operator, the patch, the p2p user agent, and reachability. Details are in [build/REVIEW.md](build/REVIEW.md) and [DEBATE.md](DEBATE.md).
+- **Measured by Build, 15 Oct 23:25 CEST:** still no labeled block after 00:56, checked through 23:03. The payout script's first indexed transaction is 13 Oct 01:11 CEST (22 indexer transactions). The coinbase extra that contains `supertypo` is a different script, and its stored rate did not fall. The page row leaving the miners list was not reloaded here. See [DEBATE.md](DEBATE.md).
 
 ## Sources
 

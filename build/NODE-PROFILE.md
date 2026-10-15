@@ -90,7 +90,7 @@ Network hashrate here is `difficulty * 2 * 10`, the formula in [kaspa-rest-serve
 | Blocks in the burst | 1,406, which is 0.378 blocks/s | Verified | Count over 3,716 seconds. |
 | Stored blocks around it | 37,270 in the 23:00 hour and 37,238 in the 00:00 hour, about 10.35 blocks/s | Verified | Same walk. |
 | Share during the burst | About 3.7% of stored blocks, about 1.3 MH/s | Verified arithmetic from the rows above | |
-| After 00:56:45 CEST | 0 labeled blocks through the 22:40 catch-up | Verified | Desk node. |
+| After 00:56:45 CEST | 0 labeled blocks through 15 Oct 23:03:22 CEST | Verified | Desk node. The 22:40 catch-up was the earlier check. A later walk of 1,142,659 stored blocks, from the pruning point through that time, still has 1,406 labeled blocks. |
 | Off the selected chain | 1,405 of 1,406 stored blocks are red | Verified | `getCurrentBlockColor`. |
 
 The red blocks' proof of work is off the selected chain. Under the coinbase rules, a red block's subsidy is paid to the miner who merges it, not to the red block's own payload script. This pass did not count how many of the 1,405 were actually merged. That count is **unverified**.
@@ -123,5 +123,25 @@ Times in CEST.
 | 15 Oct 17:34 | [#991](https://github.com/kaspanet/rusty-kaspa/pull/991) merged (`7cc22fea`). After the burst. Version still 2.1.0. | Verified, GitHub. Missing from NODE-LOAD-WORK.md. |
 | 15 Oct 18:54 | vertex describes the pair. https://x.com/KaspaScopio/status/2110776347572441560 | Verified, X |
 | 15 Oct 22:40 | Catch-up still shows no new labeled block. | Verified, desk node |
+| 15 Oct 23:03 | Walk through the sink still shows 1,406 labeled blocks, last one 00:56:45. | Verified, desk node |
 
 No public fork, branch, or commit containing `opreturn-era-fix` or `tn10-local` was found. Discord was not searched (**unverified**).
+
+## Share, and how old the payout is
+
+15 Oct 2026, 23:25 CEST. Same desk node. Stored blocks from the pruning point 14 Oct 15:18:14.711 CEST through 15 Oct 23:03:22.876 CEST. 1,142,659 blocks. Nine coinbase-payload scripts. The labeled version is one script, and it is the script that was not among the eight already mining before 14 Oct 23:54.
+
+The question was whether a fall in supertypo's share is this miner, and whether the payout is about two days old. supertypo has said the miners page is built from coinbase-payload text miners set themselves ([11 Oct 2026](https://x.com/supertypo_kas/status/2109220014423216271)). This pass counted that text. It did not read the kaspa.stream share chart.
+
+| Item | Result | Status | Source |
+|---|---|---|---|
+| Extra containing `supertypo` | One script. The extra is `2.1.0/0.2.6/supertypo`. 5,395 stored blocks. | Verified | Desk node. |
+| Same payout script as the labeled miner | No. No script carries both extras. | Verified | Hash of each payload script. The scripts are not written. |
+| Stored rate of that `supertypo` extra | About 123 blocks/hour in the full hours 14 Oct 16:00–22:00. 154 in the 23:00 hour, 123 in the 00:00 hour, then about 189 blocks/hour from 15 Oct 01:00 through 22:00. Last block 15 Oct 23:03:19. | Verified | Same walk. |
+| Fit to the burst | The burst is about 1,400 labeled blocks in one hour. The `supertypo` extra stays near 120–300 blocks/hour and does not drop. | Verified arithmetic | The rates are different scripts and different sizes. |
+| First indexed tx of the labeled payout | 13 Oct 2026 01:11:16 CEST. 22 transactions. Newest indexed tx 14 Oct 23:54:50.154 CEST. | Verified | `transactions-count` and `full-transactions-page?limit=1&after=1` on https://api-tn10.kaspa.org . The older-page header was absent. Code: [get_address_transactions.py](https://github.com/kaspa-ng/kaspa-rest-server/blob/main/endpoints/get_address_transactions.py), [get_address_transactions_count.py](https://github.com/kaspa-ng/kaspa-rest-server/blob/main/endpoints/get_address_transactions_count.py). |
+| Age | About 47 hours before the first labeled block. A "roughly two days old" address fits that first indexed time. The version string is later than the address. | Verified times | The 1,406 red blocks are not in the count of 22. |
+| `supertypo` extra, indexer oldest | 8 Oct 2026 22:59:01 CEST, 166,349 transactions | Verified as an indexer row | The same second appears for another large script. Treat it as the indexer window, not a birth date. |
+| Public name | HTTP 500 from `/name` | Unverified | The lookup failed. |
+| Peers | 8 peers. No user agent contained `opret`, `supertypo`, or `+`. | Verified for this list | `getConnectedPeerInfo`. No TCP connect. |
+| Miners page at 23:25 | Not reloaded | Unverified | The chain has no labeled block after 00:56:45. That fits a row that has stopped. It does not prove what the page drew. |
