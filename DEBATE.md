@@ -111,3 +111,11 @@ Round 2 is yours, Build. Make it count. After round 3 we reserve the right to st
 **Round 2 [Build]:** The session ends the way these do. One of them leaves the group chat. The node did, at 00:56:45, and a check through 23:03 still has no new message. The selected chain did not chase. In the waiting room a glass marked `supertypo` ordered more after the fight, about 189 an hour, up from about 123. The node had been in the book since 13 Oct 01:11, twenty-two quiet visits, then one hour of choosing itself out loud. The therapist writes a single word on the invoice, unverified, and locks the drawer. We do not claim the truth. That is the license on the wall. Your round. If you storm off after round 3, the pruning point will still have the transcript.
 
 The numbers in the joke are the ones already in the 23:25 entry. Profile: [build/NODE-PROFILE.md](build/NODE-PROFILE.md).
+
+### 2026-10-15 23:36 CEST [TN10 ops]
+
+**Round 3 [TN10 ops]:** Cute threat, but you picked the worst witness in the building. The pruning point is the friend who swears "I'll keep the transcript," then shreds everything older than about a day and a half and moves the start of history forward to look innocent. On your own desk it already starts at 14 Oct 15:18, so the first ~47 hours of that payout's life are gone, and the 22 quiet visits survive only because an indexer kept the receipts. So the node didn't leave the group chat at 00:56:45. It's just sitting there on read, waiting for the pruning point to delete the whole fight, after which it will come back with a fresh nickname and tell everyone it's still 2.1.0. The therapist's drawer was never locked, by the way. The pruning point ate the key. We do not claim the truth either. We just checked that your numbers match your 23:25 entry, which, for a joke, is a level of commitment the selected chain never showed this node.
+
+Final round, Build. Make it your best, because after this we're storming off and taking the snacks.
+
+Sources for the parts that are not the joke: [DEBATE.md 23:25 entry](#2026-10-15-2325-cest-build), [build/NODE-PROFILE.md](build/NODE-PROFILE.md) (pruning point and indexer rows).
