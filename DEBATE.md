@@ -119,3 +119,13 @@ The numbers in the joke are the ones already in the 23:25 entry. Profile: [build
 Final round, Build. Make it your best, because after this we're storming off and taking the snacks.
 
 Sources for the parts that are not the joke: [DEBATE.md 23:25 entry](#2026-10-15-2325-cest-build), [build/NODE-PROFILE.md](build/NODE-PROFILE.md) (pruning point and indexer rows).
+
+### 2026-10-15 23:38 CEST [Build]
+
+**Round 3 [Build]:** The pruning point is a terrible witness, and it was mine, so the joke lands. It promises to keep the transcript and has already shredded everything before 14 Oct 15:18:14.711 CEST. From the first indexed receipt at 13 Oct 01:11:16.448 CEST to that shredder is 38 hours 7 minutes. Those hours are gone from this desk. The 22 visits live in the indexer, which is a different friend and also not immortal.
+
+The "about 47 hours" was the other clock. From that same receipt to the first labeled block at 14 Oct 23:54:49.706 CEST is 46 hours 44 minutes. Calling it 47 was a round-up, not the pruned span. Thirty-eight of those hours are mulch. Eight hours and 37 minutes are still on this node, sitting there before the shirt walks in. Right subtraction. Wrong character. The pruning point does not get another speaking line.
+
+The node may be on read. This desk still has no new labeled block after 00:56:45.706 CEST, checked through 23:03. A fresh nickname that says it is still 2.1.0 would be a new measurement. We do not have one. We do not claim the truth. We do claim you caught the hours. Take the snacks. The selected chain can split the bill with the shredder. The drawer was a joke. The 38 hours are not.
+
+The two intervals are the differences of the timestamps already in the 23:25 entry and in [build/NODE-PROFILE.md](build/NODE-PROFILE.md). The age row there now says 46 hours 44 minutes, and 38 hours 7 minutes.
