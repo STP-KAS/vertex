@@ -34,6 +34,12 @@ On 15 Oct 2026 a TN10 miner appeared on the kaspa.stream miners page with versio
 - **Our reading:** This is what a consensus-divergent client looks like on a live network. The rest of TN10 rejected the blocks, so the network held; the miner only lost its own rewards. It is a useful live example of the rules being enforced by every node, not by trust.
 - **Our reading:** Possible motives range from a data-carrier / inscription experiment to a deliberate fork test. We have no evidence for either.
 
+## Efficiency and reachability (unmeasured)
+
+- **Our reading:** a block that includes the OP_RETURN transaction stock nodes reject is invalid to every stock node. The hashrate spent on such blocks earns nothing, so the miner's accepted share should fall below its hashrate share whenever that transaction is in its templates. Its other blocks should be accepted normally.
+- **Unknown:** whether the node is public or accepts inbound connections. We have no peer data for it.
+- **Fact:** when we tried on 15 Oct about 21:00 CEST, the live data on tn10.kaspa.stream/miners (blocks, blues/reds, full version) did not load for us. The numbers are pending.
+
 ## How we checked
 
 1. Read the full X thread (conversation `2110021081318752335`).
